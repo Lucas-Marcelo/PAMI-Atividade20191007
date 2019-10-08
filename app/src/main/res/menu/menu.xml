@@ -6,4 +6,10 @@
         android:icon="@android:drawable/ic_menu_add"
         android:title="Item"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/idEditar"
+        android:title="Editar" />
+    <item
+        android:id="@+id/idExluir"
+        android:title="Excluir" />
 </menu>
