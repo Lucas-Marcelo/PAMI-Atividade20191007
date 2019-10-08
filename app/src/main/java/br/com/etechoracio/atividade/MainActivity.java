@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.PopupMenu;
 
-public class MainActivity extends AppCompatActivity implements CustomDialog.ItemListener, AdapterView.OnItemLongClickListener{
+public class MainActivity extends AppCompatActivity implements CustomDialog.ItemListener, AdapterView.OnItemLongClickListener, PopupMenu.OnMenuItemClickListener{
 
     private boolean insertMode;
     private ItemAdapter adapter;
@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Item
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Item
         }
 
     }
+
+
 
     @Override
     public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
