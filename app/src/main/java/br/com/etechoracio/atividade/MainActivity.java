@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Item
 
         PopupMenu popup =  new PopupMenu(this, view);
         popup.inflate(R.menu.menu2);
+        popup.setOnMenuItemClickListener(this);
         popup.show();
 
         return true;
@@ -75,6 +76,30 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Item
             adapter.insertItem(name);
         } else {
             adapter.updateItem(selectedItem, name);
+        }
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem menuItem) {
+
+        switch(menuItem.getItemId())
+        {
+            case R.id.idEditar:
+                CustomDialog dialog = new CustomDialog(this);
+                dialog.show(getFragmentManager(), "idEditar");
+
+                insertMode = false;
+                return true;
+
+            case R.id.idExcluir:
+
+                adapter.removeItem(selectedItem);
+
+                insertMode = false;
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(menuItem);
         }
     }
 }
