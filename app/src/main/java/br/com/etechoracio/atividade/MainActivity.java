@@ -91,6 +91,13 @@ public class MainActivity extends AppCompatActivity implements CustomDialog.Item
                 insertMode = false;
                 return true;
 
+            case R.id.idEditar:
+                CustomDialog dialog = new CustomDialog(this);
+                dialog.show(getFragmentManager(), "idEditar");
+
+                insertMode = false;
+                return true;
+
             default:
                 return super.onOptionsItemSelected(menuItem);
         }
